@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+    <div class="features">
+    <h1>{{ title }}</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Aliquam beatae culpa eaque ex explicabo in, iusto laboriosam,
+        minus pariatur placeat quaerat quia repellendus sequi similique
+        tempore vel voluptate! Aperiam commodi eum incidunt quasi
+        quibusdam, temporibus unde voluptate? Accusantium aut,
+        dolorum earum hic neque omnis perspiciatis quae recusandae
+        tempora vel voluptate?</p>
+    <button class="btn btn-warning">На страницу про нас</button>
+    {{ values }}
+    {% for el in values %}
+        {% if el == "free" %}
+            {% filter upper %}
+            	<p>{{ el }}</p>
+            {% endfilter %}
+        {% endif %}
+    {% endfor %}
+    {{ obj.b }}
+    {% for el in obj %}
+        <p>{{ el }}</p>
+    {% endfor %}
+    </div>
+{% endblock %}
