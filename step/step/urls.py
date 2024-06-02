@@ -16,12 +16,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('main.urls')),
-    path('news/', include('news.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  path('admin/', admin.site.urls),
+                  path('', include('main.urls')),
+                  path('news/', include('news.urls')),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+"""
+В Django метод include() используется в файле urls.py для
+включения других файлов с маршрутами (routes).
+Это полезно для организации кода, особенно если
+ваше приложение имеет много маршрутов.
+
+Когда вы используете метод include() в файле urls.py,
+вы фактически подключаете другой файл
+с маршрутами в текущий файл.
+Это помогает упростить и разделить маршруты
+в разные файлы для лучшей организации проекта.
+"""
